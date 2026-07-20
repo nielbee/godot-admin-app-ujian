@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://nqm6aqsfaf8v"]
+
+[ext_resource type="Shader" uid="uid://d0sdokxu62x31" path="res://resources/shader/sky.gdshader" id="1_gr5xt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0y31u"]
+shader = ExtResource("1_gr5xt")
+shader_parameter/horizontalMovement = 0.1
+shader_parameter/verticalMovement = 0.1
+shader_parameter/frequencyStar = 0.1
+shader_parameter/sizeStar = 100.0
+shader_parameter/brightnessStar = 3.0
+shader_parameter/shineFrequencyStar = 8.0
+shader_parameter/transparencyStar = 0.0
+shader_parameter/starIterations = 3
+shader_parameter/frequencyBgStar = 0.996
+shader_parameter/shineFrequencyBgStar = 1.0
+shader_parameter/transparencyBgStar = 0.0
+shader_parameter/colorBackground = Color(0.05, 0.04, 0.2, 1)
+shader_parameter/transparencyBackground = 0.0
+shader_parameter/seed = 0.0
+
+[node name="ColorRect" type="ColorRect" unique_id=691248521]
+material = SubResource("ShaderMaterial_0y31u")
+offset_left = -32539.0
+offset_top = -19751.0
+offset_right = 34182.0
+offset_bottom = 22500.0

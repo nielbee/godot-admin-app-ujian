@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://dgiey6xfsk4tq"]
+
+[ext_resource type="Script" uid="uid://bwioudw1n1w0j" path="res://scripts/index.gd" id="1_356j3"]
+[ext_resource type="Theme" uid="uid://cmnps2p5clwx7" path="res://resources/ujianAppTheme.tres" id="2_2gn6w"]
+[ext_resource type="PackedScene" uid="uid://7r4ni2vvdsof" path="res://texture_rect.tscn" id="2_mbj17"]
+
+[sub_resource type="Theme" id="Theme_ir7so"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d1yoc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0y31u"]
+
+[node name="Control" type="Control" unique_id=1387505601]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_356j3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=968581016]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1587798019]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme = SubResource("Theme_ir7so")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_d1yoc")
+
+[node name="TextureRect" parent="CanvasLayer/Panel" unique_id=1850534868 instance=ExtResource("2_mbj17")]
+layout_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=1677968544]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.0
+offset_top = -75.5
+offset_right = 274.0
+offset_bottom = 75.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Panel/VBoxContainer" unique_id=762816339]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("2_2gn6w")
+placeholder_text = "NPSN"
+virtual_keyboard_enabled = false
+
+[node name="TextEdit2" type="TextEdit" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1690852799]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+placeholder_text = "Password"
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Panel/VBoxContainer" unique_id=1013432674]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0y31u")
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel/VBoxContainer" unique_id=494579019]
+layout_mode = 2
+theme = ExtResource("2_2gn6w")
+text = "LOGIN"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel" unique_id=1730839709]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -49.0
+offset_top = -74.0
+offset_right = 47.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel/HBoxContainer" unique_id=126532502]
+layout_mode = 2
+theme = ExtResource("2_2gn6w")
+text = "Registrasi"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1367175392]
+timeout = 5.0
+
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/HBoxContainer/Button" to="." method="_on_registrasi_button_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

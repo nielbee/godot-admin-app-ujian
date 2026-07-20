@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://b8ljnvlyqlsee"]
+
+[ext_resource type="Theme" uid="uid://cmnps2p5clwx7" path="res://resources/ujianAppTheme.tres" id="1_0sove"]
+[ext_resource type="Script" uid="uid://dgstk8lmkaj28" path="res://scripts/registrasi.gd" id="1_5j5x4"]
+[ext_resource type="PackedScene" uid="uid://7r4ni2vvdsof" path="res://texture_rect.tscn" id="2_ef0w6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5j5x4"]
+
+[node name="registrasi" type="Control" unique_id=943745794]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5j5x4")
+
+[node name="Panel" type="Panel" parent="." unique_id=1171802649]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5j5x4")
+
+[node name="TextureRect" parent="Panel" unique_id=1850534868 instance=ExtResource("2_ef0w6")]
+layout_mode = 1
+
+[node name="Control" type="Control" parent="." unique_id=422433902]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -270.5
+offset_right = 668.0
+offset_bottom = 270.5
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=2085412082]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 3.5
+offset_right = 30.0
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel" unique_id=1898096448]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer" unique_id=1574754256]
+layout_mode = 2
+text = "Registrasi"
+horizontal_alignment = 1
+
+[node name="TextEditNPSN" type="TextEdit" parent="Control/Panel/VBoxContainer" unique_id=620794874]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+placeholder_text = "NPSN"
+
+[node name="TextEditNama" type="TextEdit" parent="Control/Panel/VBoxContainer" unique_id=1202628278]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+placeholder_text = "Nama"
+
+[node name="TextEditEmail" type="TextEdit" parent="Control/Panel/VBoxContainer" unique_id=1520310244]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+placeholder_text = "E-Mail"
+
+[node name="TextEditPass" type="TextEdit" parent="Control/Panel/VBoxContainer" unique_id=104781487]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+placeholder_text = "Password ( 8 karakter )"
+
+[node name="Button" type="Button" parent="Control/Panel/VBoxContainer" unique_id=1391315826]
+layout_mode = 2
+theme = ExtResource("1_0sove")
+text = "Registrasi"
+
+[node name="ButtonKeluar" type="Button" parent="." unique_id=2133764651]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -138.0
+offset_top = 13.0
+offset_right = -23.0
+offset_bottom = 79.0
+grow_horizontal = 0
+text = "Keluar"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1467172881]
+timeout = 5.0
+
+[connection signal="pressed" from="Control/Panel/VBoxContainer/Button" to="." method="_on_registrasi_button_pressed"]
+[connection signal="pressed" from="ButtonKeluar" to="." method="_on_button_keluar_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ch767hpg847vt"
+path="res://.godot/imported/ujianappadmin.dialogue-4836d0feaac295aa09be5e7c28c027e7.tres"
+
+[deps]
+
+source_file="res://resources/dialog/ujianappadmin.dialogue"
+dest_files=["res://.godot/imported/ujianappadmin.dialogue-4836d0feaac295aa09be5e7c28c027e7.tres"]
+
+[params]
+
+defaults=true

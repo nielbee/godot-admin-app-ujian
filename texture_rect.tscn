@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://7r4ni2vvdsof"]
+
+[ext_resource type="Script" uid="uid://wn2s5kc01i03" path="res://scripts/effects/texture_rect_bg.gd" id="1_ohhw7"]
+
+[sub_resource type="Gradient" id="Gradient_2gn6w"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.042168673, 1)
+colors = PackedColorArray(0.8706207, 0.56307113, 0.5005053, 1, 0.41114172, 0.27868006, 0.6328622, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5j5x4"]
+gradient = SubResource("Gradient_2gn6w")
+fill_from = Vector2(0, 1)
+
+[node name="TextureRect" type="TextureRect" unique_id=1850534868]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_5j5x4")
+script = ExtResource("1_ohhw7")

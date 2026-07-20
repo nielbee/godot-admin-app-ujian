@@ -1,0 +1,11 @@
+~ ErrorRegister
+Error : Registrasi User tidak Berhasil
+=> END
+~ SuccessRegister
+Succes : Registrasi Berhasil
+=> END
+~ ErrorLogin
+Error : Username / password Salah
+=> END
+~ serverTimeout
+Error : Tidak dapat terkoneksi ke server

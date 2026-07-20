@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://kg1xmuhcb1yo"]
+
+[ext_resource type="PackedScene" uid="uid://7r4ni2vvdsof" path="res://texture_rect.tscn" id="1_wut1r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0y31u"]
+font_size = 27
+font_color = Color(0, 0, 0, 1)
+shadow_size = 18
+shadow_color = Color(0.8627451, 0.8627451, 0.8627451, 0.25490198)
+
+[node name="Control" type="Control" unique_id=693347500]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" parent="." unique_id=1850534868 instance=ExtResource("1_wut1r")]
+layout_mode = 1
+offset_left = -1.0
+offset_right = -1.0
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1451940204]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 83.0
+offset_right = 2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tab_0/title = "Link Ujian"
+tab_1/title = "Manajemen User"
+
+[node name="Link" type="TabBar" parent="TabContainer" unique_id=2105851088]
+layout_mode = 2
+metadata/_tab_index = 0
+metadata/_tab_name = "Link Ujian"
+
+[node name="User" type="TabBar" parent="TabContainer" unique_id=1982817693]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_tab_name = "Manajemen User"
+
+[node name="Profile" type="TabBar" parent="TabContainer" unique_id=20416257]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Profile" unique_id=1944163797]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = -243.5
+offset_right = 489.0
+offset_bottom = 244.5
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="TabContainer/Profile/VBoxContainer" unique_id=26429219]
+layout_mode = 2
+text = "Nama"
+
+[node name="txt_nama" type="TextEdit" parent="TabContainer/Profile/VBoxContainer" unique_id=2013945254]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="TabContainer/Profile/VBoxContainer" unique_id=1199669353]
+layout_mode = 2
+text = "Ubah Password"
+
+[node name="text_pass" type="TextEdit" parent="TabContainer/Profile/VBoxContainer" unique_id=502857042]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Password"
+
+[node name="text_repeatpass" type="TextEdit" parent="TabContainer/Profile/VBoxContainer" unique_id=2136441654]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+placeholder_text = "Ulangi Password"
+
+[node name="Label" type="Label" parent="." unique_id=18794411]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "ADMIN - Aplikasi Ujian SMKN 1 Labuan Bajo"
+label_settings = SubResource("LabelSettings_0y31u")

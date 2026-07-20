@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ciww28bdsi5te"
+path="res://.godot/imported/registrasiGagal.dialogue-1cc921375bd6a28a7c13bc71e2054224.tres"
+
+[deps]
+
+source_file="res://resources/dialog/registrasiGagal.dialogue"
+dest_files=["res://.godot/imported/registrasiGagal.dialogue-1cc921375bd6a28a7c13bc71e2054224.tres"]
+
+[params]
+
+defaults=true
