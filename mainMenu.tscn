@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://kg1xmuhcb1yo"]
 
 [ext_resource type="PackedScene" uid="uid://7r4ni2vvdsof" path="res://texture_rect.tscn" id="1_wut1r"]
+[ext_resource type="Theme" uid="uid://cmnps2p5clwx7" path="res://resources/ujianAppTheme.tres" id="2_83s16"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p1ror"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0y31u"]
 font_size = 27
@@ -32,11 +35,12 @@ offset_right = 2.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 2
 tab_0/title = "Link Ujian"
 tab_1/title = "Manajemen User"
 
 [node name="Link" type="TabBar" parent="TabContainer" unique_id=2105851088]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 metadata/_tab_name = "Link Ujian"
@@ -48,7 +52,6 @@ metadata/_tab_index = 1
 metadata/_tab_name = "Manajemen User"
 
 [node name="Profile" type="TabBar" parent="TabContainer" unique_id=20416257]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -85,9 +88,24 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 placeholder_text = "Ulangi Password"
 
+[node name="Panel" type="Panel" parent="TabContainer/Profile/VBoxContainer" unique_id=1527981720]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p1ror")
+
+[node name="Button" type="Button" parent="TabContainer/Profile/VBoxContainer" unique_id=717305414]
+layout_mode = 2
+theme = ExtResource("2_83s16")
+text = "SIMPAN"
+
 [node name="Label" type="Label" parent="." unique_id=18794411]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -283.5
+offset_right = 283.5
+offset_bottom = 37.0
+grow_horizontal = 2
 text = "ADMIN - Aplikasi Ujian SMKN 1 Labuan Bajo"
 label_settings = SubResource("LabelSettings_0y31u")
